@@ -5,18 +5,17 @@ var munin = require('munin-plugin');
 var filename = __filename.replace(__dirname+'/', '').replace('.js','');
 var jsonfile = '/opt/node-munin-redis/munin-redis.json';
 
-var select = function(opt){
+var modelmap = {
+    'default': munin.Model.Default,
+    'counter': munin.Model.Counter,
+    'temperature': munin.Model.Temperature,
+    'rate': munin.Model.Rate,
+};
+
+var model_select = function(opt){
     var Model = munin.Model.Default;
-    switch(opt){
-    case 'counter':
-        Model = munin.Model.Counter;
-        break;
-    case 'temperature':
-        Model = munin.Model.Temperature;
-        break;
-    case 'rate':
-        Model = munin.Model.Rate;
-        break;
+    if(opt in modelmap){
+         Model = modelmap[opt];
     }
     return Model;
 }
@@ -28,7 +27,7 @@ var render = function(g){
 var main = function(config){
     var g = new munin.Graph(config['title'],config['label'],config['category']);
     var rcl = redis.createClient(config['port'],config['host']);
-    var Model = select(config['graph']);
+    var Model = model_select(config['graph']);
     rcl.hgetall(config['key'], function(err, val){
         if(err){
             return;
