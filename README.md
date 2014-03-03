@@ -16,14 +16,16 @@ sudo npm install
 
 ```
 redis-cli
-redis 127.0.0.1:6379> hset room_temp room1 10                                                                                                
-redis 127.0.0.1:6379> hset room_temp room2 11                                                                                                
-redis 127.0.0.1:6379> hset room_temp room3 60    
+redis 127.0.0.1:6379> hset room_temp room1 10
+redis 127.0.0.1:6379> hset room_temp room2 11
+redis 127.0.0.1:6379> hset room_temp room3 60
 
 sudo ln -s /opt/node-munin-redis/redis_hash.js /etc/munin/plugins/room_temp
 ```
 
-```:/opt/node-munin-redis/munin-redis.json
+/opt/node-munin-redis/munin-redis.json
+
+```
 {
  "room_temp":{
   "host":"localhost",
