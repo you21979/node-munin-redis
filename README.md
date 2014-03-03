@@ -30,6 +30,7 @@ sudo ln -s /opt/node-munin-redis/redis_hash.js /etc/munin/plugins/room_temp
  "room_temp":{
   "host":"localhost",
   "port":6379,
+  "graph":"temperature",
   "title":"room temp",
   "label":"temp",
   "category":"room",
