@@ -10,7 +10,7 @@ var render = function(g){
 }
 var main = function(config){
     var g = new munin.Graph(config['title'],config['label'],config['category']);
-    var rcl = redis.createClient();
+    var rcl = redis.createClient(config['port'],config['host']);
     rcl.hgetall(config['key'], function(err, val){
         if(err){
             return;

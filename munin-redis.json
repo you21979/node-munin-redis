@@ -1,5 +1,7 @@
 {
  "room_temp":{
+  "host":"localhost",
+  "port":6379,
   "title":"room temp",
   "label":"temp",
   "category":"room",
