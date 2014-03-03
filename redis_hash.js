@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var redis = require('redis');
 var munin = require('munin-plugin');
 
