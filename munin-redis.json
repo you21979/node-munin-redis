@@ -1,0 +1,8 @@
+{
+ "room_temp":{
+  "title":"room temp",
+  "label":"temp",
+  "category":"room",
+  "key":"room_temp"
+ }
+}
