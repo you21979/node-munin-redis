@@ -2,6 +2,7 @@
  "room_temp":{
   "host":"localhost",
   "port":6379,
+  "graph":"temperature",
   "title":"room temp",
   "label":"temp",
   "category":"room",
