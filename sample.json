@@ -1,0 +1,13 @@
+{
+ "host":"localhost",
+ "port":6379,
+ "sources":[
+  {
+   "graph":"temperature",
+   "title":"room temp",
+   "label":"temp",
+   "category":"room",
+   "key":"room_temp"
+  }
+ ]
+}
